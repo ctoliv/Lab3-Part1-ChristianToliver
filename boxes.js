@@ -192,8 +192,26 @@ function render() {
 
 	modelViewMatrix = lookAt(eye,at,up);
 	//modelViewMatrix = translate(0, 0, -10);
+	var cubeShape = shapes.wireCube;
+	gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(modelViewMatrix) );
+
+	gl.drawArrays( shapes.axes.type, shapes.axes.start, shapes.axes.size);	
+
+	modelViewMatrix = mult( modelViewMatrix, translate(1.0, 0.0, 0.0));
+
     gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(modelViewMatrix) );
 	
-	gl.drawArrays(shapes.axes.type, shapes.axes.start, shapes.axes.size);	
+	gl.drawArrays( cubeShape.type, cubeShape.start, cubeShape.size);
+
+	var secondCubeMatrix = lookAt(eye, at, up);
+
+	secondCubeMatrix = mult( secondCubeMatrix, translate(1.0, 1.0, 0.0));
+
+	secondCubeMatrix = mult( secondCubeMatrix, rotate(45.0, vec3(0.0, 1.0, 0.0)));
+
+	gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(secondCubeMatrix));
+
+	gl.drawArrays( cubeShape.type, cubeShape.start, cubeShape.size);
+
     requestAnimationFrame(render);
 }
