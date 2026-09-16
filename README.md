@@ -1,4 +1,5 @@
 # Lab3-Part1-ChristianToliver
+**Date Completed:** September 15, 2026
 ### Step 1
 There was little to no change in the display. The original lookAt() placed the camera at (0, 0, 10) looking toward the origin, while translate(0, 0, -10) moves the scene 10 units away along the Z-axis. In this case, both transformations made a similar view.
 
@@ -17,3 +18,5 @@ The display became stretched vertically. The Y-axis appeared longer because the 
 After changing the aspect ratio to `canvas.width / canvas.height`, the scene kept the correct proportions with both canvas sizes.
 ### Step 10
 If I wanted to keep the X-axis and Y-axis in their original orientation while still seeing the tops of the cubes, I would change the camera view using lookAt() instead of rotating the entire scene. This would have the camera look down at the cubes while keeping the coordinate axes in their original orientation.
+### Summary
+In this lab, I learned how viewing transformations and projection matrices affect how a WebGL scene is displayed. I also practiced moving and rotating objects with transformation matrices, switching from perspective to orthographic projection, and rotating the scene to view all three coordinate axes.
