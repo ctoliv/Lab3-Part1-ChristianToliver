@@ -15,3 +15,5 @@ The display became stretched vertically. The Y-axis appeared longer because the 
 
 **Experiment C:**  
 After changing the aspect ratio to `canvas.width / canvas.height`, the scene kept the correct proportions with both canvas sizes.
+### Step 10
+If I wanted to keep the X-axis and Y-axis in their original orientation while still seeing the tops of the cubes, I would change the camera view using lookAt() instead of rotating the entire scene. This would have the camera look down at the cubes while keeping the coordinate axes in their original orientation.
